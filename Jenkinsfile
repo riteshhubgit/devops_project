@@ -1,19 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                echo 'Building the application...'
+                echo 'Code already checked out by Jenkins SCM'
             }
         }
-        stage('Test') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Running tests...'
+                sh 'docker build -t my-portfolio-app .'
             }
         }
-        stage('Deploy') {
+        stage('Run Container') {
             steps {
-                echo 'Deploying my devops project ...'
+                sh 'docker run -d -p 8081:80 --name portfolio-test my-portfolio-app'
             }
         }
     }
