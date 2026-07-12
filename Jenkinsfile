@@ -16,9 +16,10 @@ pipeline {
                 sh 'docker run -d -p 8081:80 --name portfolio-test my-portfolio-app'
             }
         }
-    }   stage('Test Command') {
+        stage('Test Command') {
             steps {
                 sh 'docker ps'
             }
+        }
     }
 }
