@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Test command') {
             steps {
-                sh 'ls -a'
+                sh 'ls -al'
             }
         }
     }
