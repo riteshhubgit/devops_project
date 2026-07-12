@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Test command') {
             steps {
-                sh 'docker ps'
+                sh 'ls -a'
             }
         }
     }
