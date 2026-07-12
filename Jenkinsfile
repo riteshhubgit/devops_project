@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t my-portfolio-app .'
+                sh 'docker buld -t my-portfolio-app .'
             }
         }
         stage('Stop Old Container') {
